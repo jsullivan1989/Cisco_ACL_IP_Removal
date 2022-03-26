@@ -58,7 +58,7 @@ with open("hostsfile.txt", "r") as r:
                 ssh_connect = ConnectHandler(**Cisco_Host)
                 ssh_connect.enable()
                 result = ssh_connect.send_config_set(IP_removal_commands)                   # connect to device and send the commands from above to remove IPs and save config
-                print ("Removing Level Three IPs from " + hostname + " CPE Router\n")
+                print ("Removing IPs from ACL in " + hostname + " CPE Router\n")
                 print(result)
             except(AuthenticationException):                                                # Authentication Failure exception handling.  If authentication fails, make a note and move on to next device in list
                 print('Authentication Failure: ' + hostname)
